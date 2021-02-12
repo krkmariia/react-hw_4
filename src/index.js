@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const listItem = React.createElement("li", {}, "First li-element;")
+const listItem1 = React.createElement("li", {}, "Second li-element;")
+const listItem2 = React.createElement("li", {}, "Third li-element;")
+const listItem3 = React.createElement("li", {}, "Fourth li-element;")
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const unmarkedList = React.createElement("ul", {}, listItem, listItem1, listItem2, listItem3)
+
+const navigation = React.createElement("nav", {}, unmarkedList)
+
+ReactDOM.render(navigation, document.getElementById("root"));
